@@ -6,13 +6,17 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'fin': '#ADB8CC',
-      'minke': '#7D8FB3',
-      'bowhead': '#6B7A99',
-      'blue': '#4D5E80',
-      'gray': '#EDEFF2',
-      'killer': '#C3CAD9',
-      'orange': '#FF6633'
+      'orange': '#FF6633',
+      'white': '#FFFFFF',
+      'black': '#000',
+      'whale': {
+        fin: '#ADB8CC',
+        minke: '#7D8FB3',
+        bowhead: '#6B7A99',
+        blue: '#4D5E80',
+        gray: '#EDEFF2',
+        killer: '#C3CAD9',
+      }
     }
   },
   plugins: [],
