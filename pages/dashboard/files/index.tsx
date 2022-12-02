@@ -1,11 +1,36 @@
-import { MainContainer } from "../../../components/MainContainer";
+import { ContentWrapper } from "../../../components/ContentWrapper/ContentWrapper";
+import { MainContainer } from "../../../components/MainContainer/MainContainer";
 
-export default function Home() {
+function files() {
     return (
-        <MainContainer keywords="dashboard, main menu, profile">
-            <h1 className=' border-y-4 border-x-4 border-cyan-400 inline top-4 absolute left-4 bg-orange-400 '>
-                files
-            </h1>
+        <MainContainer keywords="FILES, main menu, profile">
+            <ContentWrapper style="white">
+                <div className='px-[25px] py-[30px]'>
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                    FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES FILES
+                </div>
+            </ContentWrapper>
         </MainContainer>
     )
 }
+
+export default files;

@@ -1,12 +1,28 @@
 import React from 'react'
-import { MainContainer } from '../../../../components/MainContainer'
+import { ContentWrapper } from '../../../../components/ContentWrapper/ContentWrapper'
+import { MainContainer } from '../../../../components/MainContainer/MainContainer'
 
-export default function ListTasks() {
+export default function listTasks() {
     return (
         <MainContainer keywords="tasks, list task, list, list tasks">
-            <h1 className=' border-y-4 border-x-4 border-cyan-400 inline top-4 absolute left-4 bg-gray-300 '>
-                LIST-TASKS
-            </h1>
+            <ContentWrapper style="white">
+                <div className='px-[25px] py-[30px]'>
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                    LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS
+                </div>
+            </ContentWrapper>
         </MainContainer>
     )
 }

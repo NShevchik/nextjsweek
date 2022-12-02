@@ -1,12 +1,28 @@
 import React from 'react'
-import { MainContainer } from '../../../../components/MainContainer'
+import { ContentWrapper } from '../../../../components/ContentWrapper/ContentWrapper'
+import { MainContainer } from '../../../../components/MainContainer/MainContainer'
 
-export default function Timeline() {
+export default function timeline() {
     return (
         <MainContainer keywords="note time, notes time, notes timeline, notes time line, time line">
-            <h1 className=' border-y-4 border-x-4 border-cyan-400 inline top-4 absolute left-4 bg-pink-300 '>
-                TIMELINE
-            </h1>
+            <ContentWrapper style="white">
+                <div className='px-[25px] py-[30px]'>
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
+                    TIMELINE TIMELINE
+                </div>
+            </ContentWrapper>
         </MainContainer>
     )
 }

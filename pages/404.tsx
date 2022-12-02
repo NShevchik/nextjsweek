@@ -1,11 +1,21 @@
-import { MainContainer } from "../components/MainContainer";
+import { MainContainer } from "../components/MainContainer/MainContainer";
+import { ContentWrapper } from "../components/ContentWrapper/ContentWrapper";
 
-export default function Home() {
+export function ErrorPage() {
     return (
         <MainContainer keywords="error, page not found, error page, 404 page">
-            <h1 className=' border-y-4 border-x-4 border-cyan-400 inline bg-green-300 '>
-                404
-            </h1>
-        </MainContainer>
+            <ContentWrapper>
+                <div className='px-[25px] py-[30px] h-96 flex items-center justify-center text-whale-bowhead flex-col'>
+                    <div className='text-[150px] flex items-center justify-center text-whale-bowhead leading-none'>
+                        404
+                    </div>
+                    <div>
+                        Not found :(
+                    </div>
+                </div>
+            </ContentWrapper>
+        </MainContainer >
     )
 }
+
+export default ErrorPage;

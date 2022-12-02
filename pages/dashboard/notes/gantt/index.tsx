@@ -1,12 +1,35 @@
 import React from 'react'
-import { MainContainer } from '../../../../components/MainContainer'
+import { ContentWrapper } from '../../../../components/ContentWrapper/ContentWrapper'
+import { MainContainer } from '../../../../components/MainContainer/MainContainer'
 
-export default function Gantt() {
+export default function gantt() {
     return (
         <MainContainer keywords="gantt">
-            <h1 className=' border-y-4 border-x-4 border-cyan-400 inline top-4 absolute left-4 bg-purple-300 '>
-                Gantt
-            </h1>
+            <ContentWrapper style="white">
+                <div className='px-[25px] py-[30px]'>
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                    GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT
+                </div>
+            </ContentWrapper>
         </MainContainer>
     )
 }

@@ -9,6 +9,7 @@ module.exports = {
       'orange': '#FF6633',
       'white': '#FFFFFF',
       'black': '#000',
+      'transparent': 'transparent',
       'whale': {
         fin: '#ADB8CC',
         minke: '#7D8FB3',
@@ -17,7 +18,14 @@ module.exports = {
         gray: '#EDEFF2',
         killer: '#C3CAD9',
       }
-    }
+    },
+    boxShadow: {
+      'soft': '0px 2px 5px rgba(0, 0, 0, 0.04)',
+    },
+    flex: {
+      '26': '1 1 26%',
+      '74': '1 1 74%'
+    },
   },
   plugins: [],
 }
