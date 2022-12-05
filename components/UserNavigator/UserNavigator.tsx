@@ -1,6 +1,6 @@
 import { FaUserCircle } from 'react-icons/fa'
 import { IoIosNotifications, IoIosCloseCircle } from 'react-icons/io'
-import { WhiteCircleUI } from '../WhiteCircle/WhiteCircleUI'
+import { WhiteCircle_m } from '../WhiteCircle/WhiteCircle_m'
 
 export const UserNavigator = ({ username }: { username: string }) => {
     return (
@@ -8,10 +8,10 @@ export const UserNavigator = ({ username }: { username: string }) => {
             <FaUserCircle className='text-whale-killer text-2xl' />
             <div className='text-whale-bowhead text-[13px] mx-[20px]'>{username}</div>
             <div className='mx-[5px]'>
-                <WhiteCircleUI icon={<IoIosNotifications />} />
+                <WhiteCircle_m icon={<IoIosNotifications />} />
             </div>
             <div className='ml-[5px]'>
-                <WhiteCircleUI icon={<IoIosCloseCircle />} />
+                <WhiteCircle_m icon={<IoIosCloseCircle />} />
             </div>
         </div>
     )
