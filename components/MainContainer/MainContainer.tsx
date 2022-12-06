@@ -17,7 +17,7 @@ export const MainContainer = ({ children, keywords }: { children: any, keywords:
                     <Sidabar />
                     <Profile />
                 </div>
-                <div className='flex-60 pt-[25px] '>
+                <div className='flex-60 pt-[25px]'>
                     {children}
                 </div>
             </div>
