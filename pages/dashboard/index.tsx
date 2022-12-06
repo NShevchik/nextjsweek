@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
 import { MainContainer } from "../../components/MainContainer/MainContainer";
 import { useUsers } from "../../store/store";
 
 export default function dashboard({ users }: { users: any }) {
   const setUsers = useUsers((state) => state.setUsers)
-  setUsers(users)
+  useEffect(() => {
+    setUsers(users)
+  }, [])
+
   return (
     <MainContainer keywords="dashboard, main menu, profile">
       <ContentWrapper style="white">

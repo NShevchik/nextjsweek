@@ -1,10 +1,13 @@
 import { MainContainer } from "../components/MainContainer/MainContainer";
 import { ContentWrapper } from "../components/ContentWrapper/ContentWrapper";
 import { useUsers } from "../store/store";
+import { useEffect } from "react";
 
 export default function ErrorPage({ users }: { users: any }) {
     const setUsers = useUsers((state) => state.setUsers)
-    setUsers(users)
+    useEffect(() => {
+        setUsers(users)
+    }, [])
     return (
         <MainContainer keywords="error, page not found, error page, 404 page">
             <ContentWrapper>
