@@ -1,12 +1,27 @@
 import React from "react";
 import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
 import { MainContainer } from "../../components/MainContainer/MainContainer";
+import { useMenuOpen } from "../../store/store";
 
-function dashboard() {
+export default function dashboard({ users }: { users: any }) {
+  // const uses = useUsers(state => state.users)
+  // console.log(uses)
+  // const changeMenu = useMenuOpen((state) => state.changeMenu)
+
+  // function handleClick(data) {
+
+  // }
+
   return (
     <MainContainer keywords="dashboard, main menu, profile">
       <ContentWrapper style="white">
         <div className='px-[25px] py-[30px]'>
+          {/* <button onClick={changeMenu}>
+            click to add
+          </button>
+          <div>
+            {uses[0].name}
+          </div> */}
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
@@ -34,4 +49,11 @@ function dashboard() {
   )
 }
 
-export default dashboard;
+export async function getStaticProps() {
+  const response = await fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/users');
+  const users = await response.json()
+
+  return {
+    props: { users }
+  }
+}
