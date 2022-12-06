@@ -4,8 +4,20 @@ interface MenuState {
     changeMenu: (menu: string) => void
 }
 interface UsersState<T> {
-    users: Array<T>
+    usersState: Array<T> | null
     setUsers: (data: Array<T>) => void
+}
+
+export interface IUser {
+    username: string,
+    id: string,
+    userToker: string
+    profile: {
+        firstName: string,
+        lastName: string,
+        email: string,
+        userPhoto: string,
+    }
 }
 
 export const useMenuOpen = create<MenuState>((set) => ({
@@ -13,7 +25,7 @@ export const useMenuOpen = create<MenuState>((set) => ({
     changeMenu: () => set((state) => ({ menu: state.menu === 'translate-x-[0]' ? 'translate-x-[-100%]' : 'translate-x-[0]' }))
 }))
 
-// export const useUsers = create<UsersState<Object>>((set) => ({
-//     users: [{ name: 'bebe', age: 22 }],
-//     setUsers: (data) => set(data)
-// }))
+export const useUsers = create<UsersState<IUser>>((set) => ({
+    usersState: null,
+    setUsers: (data) => set((state) => ({ usersState: data }))
+}))
