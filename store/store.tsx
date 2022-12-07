@@ -1,7 +1,7 @@
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { NOTES } from '../mocks/notes/notes'
 import { IUser, MenuState, UsersState } from '../types/types'
-import { nanoid as id } from 'nanoid'
+import axios from 'axios'
 
 export const useMenuOpen = create<MenuState>((set) => ({
     menu: 'translate-x-[-100%]',
@@ -18,20 +18,21 @@ export const useUsers = create<UsersState<IUser>>((set) => ({
 }))
 useUsers.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/users')
 
+
 export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
-    notesState: ['be'],
+    notesState: [{ name: 'avi' }],
     fetch: async (url: string) => {
         const response = await fetch(url)
         set({ notesState: await response.json() })
     },
     setNotes: (data: any) => set(() => ({ notesState: data })),
-    addFolder: (folderName: string) => {
-        set((state: any) => ({ notesState: [...state.notesState, { name: folderName, id: id(), notes: [] }] }));
+    addFolder: async (folderName: string, url: any) => {
+        set((state: any) => ({ notesState: [...state.notesState, { name: folderName, notes: [] }] }));
+        axios.post(url, { name: folderName, notes: [] })
+            .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes'))
     }
 }))
 useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes')
-
-
 
 
 // let initNote = [

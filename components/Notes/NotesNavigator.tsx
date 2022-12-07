@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNotes } from '../../store/store'
 import { NewFolderButton } from './NewFolderButton'
@@ -6,18 +7,18 @@ import { NewNoteButton } from './NewNoteButton'
 import { NoteFolder } from './NoteFolder'
 
 export const NotesNavigator = () => {
-    const notes = useNotes((state: any) => state.notesState)
     const [newFolder, setNewFolder] = useState(false)
+    const notes = useNotes((state: any) => state.notesState)
+    const notess = useNotes.getState().notesState
 
-    // useEffect(() => {
-    //     let fetchNotes = useNotes((state: any) => state.fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes'))
-    // }, [notes])
+    // axios.post('https://638f1f119cbdb0dbe31da265.mockapi.io/notes', { name: 'bebebe' })
+    // axios.delete('https://638f1f119cbdb0dbe31da265.mockapi.io/notes/1')
 
     return (
         <div className='flex-25'>
             <div className='px-[20px]'>
                 <NewNoteButton />
-                <button onClick={() => console.log(notes)}>Console noters</button>
+                <button onClick={() => console.log(notess)}>Console noters</button>
                 {notes !== 'undefiend' ?
                     <div className='my-[30px]'>
                         {notes.map((folder: any) => {

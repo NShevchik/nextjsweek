@@ -1,17 +1,25 @@
 import React, { useState } from 'react'
 import { MdClose, MdDone, MdFolder } from 'react-icons/md'
 import { useNotes } from '../../store/store'
+import { nanoid as id } from 'nanoid'
 
 export const NewFolderEditor = ({ setState }: { setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
     const addFolder = useNotes((state: any) => state.addFolder)
+    // const notes = useNotes(state => state.notesState)
     const [value, setValue] = useState('')
+    const fetchpost = useNotes((state: any) => state.fetchPost)
 
-    function handleClick() {
+    function fetchPost() {
+        fetchpost('https://638f1f119cbdb0dbe31da265.mockapi.io/notes')
+    }
+
+    async function handleClick() {
         if (value) {
-            addFolder(value);
+            await addFolder(value, 'https://638f1f119cbdb0dbe31da265.mockapi.io/notes');
             setState(false);
         }
     }
+
     return (
         <div className='flex flex-row border-2 rounded-[30px] items-center my-[10px] border-whale-white justify-between py-0 w-full'>
             <div className="text-whale-bowhead pl-[20px] text-[20px] animate-pulse">
