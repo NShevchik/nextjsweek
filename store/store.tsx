@@ -1,24 +1,5 @@
 import create from 'zustand'
-interface MenuState {
-    menu: string
-    changeMenu: (menu: string) => void
-}
-interface UsersState<T> {
-    usersState: Array<T> | null
-    setUsers: (data: Array<T>) => void
-}
-
-export interface IUser {
-    username: string,
-    id: string,
-    userToker: string
-    profile: {
-        firstName: string,
-        lastName: string,
-        email: string,
-        userPhoto: string,
-    }
-}
+import { IUser, MenuState, UsersState } from '../types/types'
 
 export const useMenuOpen = create<MenuState>((set) => ({
     menu: 'translate-x-[-100%]',

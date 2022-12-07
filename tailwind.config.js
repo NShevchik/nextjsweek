@@ -26,6 +26,7 @@ module.exports = {
     boxShadow: {
       'soft': '0px 2px 5px rgba(0, 0, 0, 0.03)',
       'extrasoft': '0px 10px 30px rgba(0, 0, 0, 0.03)',
+      'soft-orange': '0px 5px 30px rgba(255, 102, 51, 0.3)',
     },
     flex: {
       '20': '1 1 20%',

@@ -7,7 +7,7 @@ export const NewNoteButton = () => {
                 <div className="text-white opacity-50 pl-[20px]">
                     <BsFillFileEarmarkFill />
                 </div>
-                <div className="text-[12px] text-white pl-[50px]">
+                <div className="text-[13px] text-white pl-[50px]">
                     New Note
                 </div>
             </div>

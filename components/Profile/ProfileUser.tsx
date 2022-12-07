@@ -1,6 +1,7 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader';
 import { useUsers } from '../../store/store';
+import { ProfileUserLevel } from './ProfileUserLevel';
 
 export const ProfileUser = () => {
     const usersState = useUsers((state) => state.usersState)
@@ -10,8 +11,11 @@ export const ProfileUser = () => {
         <div className='flex flex-col w-[100%] items-center justify-center pt-[10px]'>
             {user
                 ?
-                <div className='w-[130px] h-[130px] rounded-full overflow-hidden'>
-                    <img src={user.profile.userPhoto} />
+                <div className='relative'>
+                    <div className='w-[110px] h-[110px] rounded-full overflow-hidden'>
+                        <img src={user.profile.userPhoto} className="object-cover" />
+                    </div>
+                    <ProfileUserLevel user={user} />
                 </div>
                 :
                 <ContentLoader
