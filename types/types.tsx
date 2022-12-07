@@ -4,6 +4,7 @@ export interface MenuState {
 }
 export interface UsersState<T> {
     usersState: Array<T> | null
+    fetch: (url: string) => void
     setUsers: (data: Array<T>) => void
 }
 

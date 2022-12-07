@@ -1,22 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNotes } from '../../store/store'
 import { NewFolderButton } from './NewFolderButton'
+import { NewFolderEditor } from './NewFolderEditor'
 import { NewNoteButton } from './NewNoteButton'
 import { NoteFolder } from './NoteFolder'
 
 export const NotesNavigator = () => {
+    const notes = useNotes((state: any) => state.notesState)
+    const [newFolder, setNewFolder] = useState(false)
+
+    // useEffect(() => {
+    //     let fetchNotes = useNotes((state: any) => state.fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes'))
+    // }, [notes])
+
     return (
         <div className='flex-25'>
             <div className='px-[20px]'>
                 <NewNoteButton />
-                <div className='my-[30px]'>
-                    <NoteFolder name={'All Notes'} length={31} main={true} />
-                    <NoteFolder name={'Folder Name'} length={2} />
-                    <NoteFolder name={'Folder Nikta'} length={7} />
-                    <NoteFolder name={'Folder Naimery'} length={1} />
-                    <NoteFolder name={'Fold 2'} length={21} />
-                </div>
-                <div>
-                    <NewFolderButton />
+                <button onClick={() => console.log(notes)}>Console noters</button>
+                {notes !== 'undefiend' ?
+                    <div className='my-[30px]'>
+                        {notes.map((folder: any) => {
+                            return <NoteFolder key={folder.id} name={folder.name} length={folder.notes?.length} />
+                        })}
+                    </div>
+                    : <></>
+                }
+                <div className='max-w-full'>
+                    {newFolder ?
+                        <NewFolderEditor setState={setNewFolder} />
+                        :
+                        <NewFolderButton callback={() => setNewFolder(true)} />
+                    }
                 </div>
             </div>
         </div>
