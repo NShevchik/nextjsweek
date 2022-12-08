@@ -1,21 +1,15 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { MdClose, MdDone, MdFolder } from 'react-icons/md'
 import { useNotes } from '../../store/store'
-import { nanoid as id } from 'nanoid'
 
 export const NewFolderEditor = ({ setState }: { setState: React.Dispatch<React.SetStateAction<boolean>> }) => {
     const addFolder = useNotes((state: any) => state.addFolder)
-    // const notes = useNotes(state => state.notesState)
     const [value, setValue] = useState('')
-    const fetchpost = useNotes((state: any) => state.fetchPost)
-
-    function fetchPost() {
-        fetchpost('https://638f1f119cbdb0dbe31da265.mockapi.io/notes')
-    }
 
     async function handleClick() {
         if (value) {
-            await addFolder(value, 'https://638f1f119cbdb0dbe31da265.mockapi.io/notes');
+            await addFolder(value, 'https://638f1f119cbdb0dbe31da265.mockapi.io/folders');
             setState(false);
         }
     }

@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
 import { MainContainer } from "../../components/MainContainer/MainContainer";
-import { NOTES } from "../../mocks/notes/notes";
-import { useNotes, useUsers } from "../../store/store";
 
-export default function dashboard({ users }: { users: any }) {
-  // const setUsers = useUsers((state) => state.setUsers)
-  // useEffect(() => {
-  //   setUsers(users)
-  // }, [])
-
+export default function dashboard() {
   return (
     <MainContainer keywords="dashboard, main menu, profile">
       <ContentWrapper style="white">
@@ -40,12 +33,3 @@ export default function dashboard({ users }: { users: any }) {
     </MainContainer>
   )
 }
-
-// export async function getStaticProps() {
-//   const response = await fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/users');
-//   const users = await response.json();
-
-//   return {
-//     props: { users }
-//   }
-// }

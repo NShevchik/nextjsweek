@@ -7,7 +7,6 @@ export interface UsersState<T> {
     fetch: (url: string) => void
     setUsers: (data: Array<T>) => void
 }
-
 export interface IUser {
     username: string,
     id: string,

@@ -1,12 +1,6 @@
 import create, { StoreApi, UseBoundStore } from 'zustand'
-import { NOTES } from '../mocks/notes/notes'
-import { IUser, MenuState, UsersState } from '../types/types'
+import { IUser, UsersState } from '../types/types'
 import axios from 'axios'
-
-export const useMenuOpen = create<MenuState>((set) => ({
-    menu: 'translate-x-[-100%]',
-    changeMenu: () => set((state) => ({ menu: state.menu === 'translate-x-[0]' ? 'translate-x-[-100%]' : 'translate-x-[0]' }))
-}))
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: null,
@@ -29,10 +23,10 @@ export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
     addFolder: async (folderName: string, url: any) => {
         set((state: any) => ({ notesState: [...state.notesState, { name: folderName, notes: [] }] }));
         axios.post(url, { name: folderName, notes: [] })
-            .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes'))
+            .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     }
 }))
-useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes')
+useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders')
 
 
 // let initNote = [
@@ -63,33 +57,5 @@ useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/notes')
 //                 id: '5'
 //             },
 //         ]
-//     },
-//     {
-//         name: 'Social',
-//         id: id(),
-//         notes: [
-//             {
-//                 name: 'Suikpa',
-//                 content: 'lorem orem lorem',
-//                 id: '6'
-//             },
-//             {
-//                 name: 'Ertanta',
-//                 content: 'lorem orem lorem',
-//                 id: '7'
-//             }, {
-//                 name: 'Qulap',
-//                 content: 'lorem orem lorem',
-//                 id: '8'
-//             }, {
-//                 name: 'Ftyukr',
-//                 content: 'lorem orem lorem',
-//                 id: '9'
-//             }, {
-//                 name: 'Bubn revs',
-//                 content: 'lorem orem lorem',
-//                 id: '10'
-//             },
-//         ]
-//     },
+//     }
 // ]

@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { WhiteCircle_m } from "../WhiteCircle/WhiteCircle_m";
 import { HiMenu } from "react-icons/hi";
-import { useMenuOpen } from "../../store/store";
 
 export const LeftSideNavbar = () => {
-  const changeMenu = useMenuOpen((state) => state.changeMenu)
+  let menu: Element | null;
+  useEffect(() => {
+    menu = document.querySelector('.menu')
+  }, [])
+
+  function openMenu() {
+    menu?.classList.toggle('translate-x-[-100%]')
+  }
+
   return (
-    <WhiteCircle_m icon={<HiMenu />} callback={changeMenu} />
+    <WhiteCircle_m icon={<HiMenu />} callback={openMenu} />
   )
 };
 

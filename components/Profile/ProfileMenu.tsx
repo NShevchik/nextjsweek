@@ -8,8 +8,6 @@ import { HiUsers } from 'react-icons/hi'
 import { IoMdCalendar } from 'react-icons/io'
 import { ImWrench } from 'react-icons/im'
 
-
-
 export const ProfileMenu = () => {
     return (
         <div className='flex flex-row flex-wrap mx-[auto] my-0 max-w-[240px] py-[30px]'>

@@ -4,13 +4,11 @@ import { AiFillStar } from 'react-icons/ai'
 import { HiTrendingUp } from 'react-icons/hi'
 import { RiEarthLine, RiMessengerFill } from 'react-icons/ri'
 import { MdOutlineLocationCity } from 'react-icons/md'
-import { useMenuOpen } from '../../store/store'
 import { WhiteCircle_m } from '../WhiteCircle/WhiteCircle_m'
 
 export const Sidabar = () => {
-    const menu = useMenuOpen((state) => state.menu)
     return (
-        <div className={`w-[102px] transition-all duration-300 overflow-hidden border-r-2 border-whale-gray ${menu}`}>
+        <div className='w-[102px] transition-all duration-300 overflow-hidden border-r-2 border-whale-gray menu'>
             <div className='pt-[35px] flex flex-col items-center'>
                 <div className='mb-[15px]'>
                     <WhiteCircle_m icon={<IoMdCompass />} />
