@@ -7,7 +7,6 @@ export const LeftSideNavbar = () => {
   useEffect(() => {
     menu = document.querySelector('.menu')
   }, [])
-
   function openMenu() {
     menu?.classList.toggle('translate-x-[-100%]')
   }

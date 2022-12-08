@@ -22,11 +22,11 @@ export const NoteFolder = ({ name, main, folder }: { name: string, main?: boolea
                 <MdFolder />
             </div>
             <div className='text-whale-bowhead text-[13px] pl-[20px] flex-grow'>
-                {name}
+                {folder.name}
             </div>
-            <div className='text-[13px] text-whale-bowhead pr-[20px]'>
-                {folder.notes?.length}
-            </div>
+            {/* <div className='text-[13px] text-whale-bowhead pr-[20px]'>
+                {notes.length}
+            </div> */}
         </Link>
     )
 }

@@ -16,7 +16,7 @@ export const NotesNavigator = () => {
                 {notes ?
                     <div className='my-[30px]'>
                         {notes.map((folder: any) => {
-                            return <NoteFolder key={folder.id} name={folder.name} folder={folder}/>
+                            return <NoteFolder key={folder.id} name={folder.name} folder={folder} />
                         })}
                     </div>
                     : <></>
