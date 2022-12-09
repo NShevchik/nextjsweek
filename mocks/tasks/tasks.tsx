@@ -32,7 +32,7 @@ export const tasksArray: Array<ITaskSpace> = [
                 id: '3',
                 assignee: 'n.shevchik',
                 priority: false,
-                done: false
+                done: true
             }
         ]
     },
