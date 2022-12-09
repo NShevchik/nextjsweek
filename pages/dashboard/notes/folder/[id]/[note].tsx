@@ -4,7 +4,7 @@ import { ContentWrapper } from '../../../../../components/ContentWrapper/Content
 import { MainContainer } from '../../../../../components/MainContainer/MainContainer'
 import { NewNote } from '../../../../../components/Notes/NewNote'
 import { NoteEditor } from '../../../../../components/Notes/NoteEditor'
-import NotePreview from '../../../../../components/Notes/NotePreview'
+import { NotePreview } from '../../../../../components/Notes/NotePreview'
 import { NotesNavigator } from '../../../../../components/Notes/NotesNavigator'
 import { useNewNote, useNotes } from '../../../../../store/store'
 
@@ -17,6 +17,13 @@ const noteOpen = ({ folder, notes, note }: { folder: any, notes: any, note: any 
                     <div className='flex flex-row'>
                         <NotesNavigator />
                         <div className='flex-25 border-x-2 border-whale-white'>
+                            <div>
+                                <div className='flex border-b-2 border-whale-white justify-between p-[20px] items-center'>
+                                    <div className='text-whale-bowhead'>
+                                        {folder.name}
+                                    </div>
+                                </div>
+                            </div>
                             {notes.map((note: any) => {
                                 return <NotePreview key={note.id} name={note.name} date={note.date} folder={folder} note={note} />
                             })}

@@ -8,7 +8,6 @@ import { NoteFolder } from './NoteFolder'
 export const NotesNavigator = () => {
     const [newFolder, setNewFolder] = useState(false)
     const notes = useNotes((state: any) => state.notesState)
-
     return (
         <div className='flex-25'>
             <div className='px-[20px]'>
