@@ -1,6 +1,7 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
-import { IUser, UsersState } from '../types/types'
+import { tasksArray } from '../mocks/tasks/tasks'
+import { ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: null,
@@ -40,3 +41,7 @@ export const useNewNote: UseBoundStore<StoreApi<any>> = create((set) => ({
     newNoteStatus: false,
     newNoteEdit: () => set((state: any) => ({ newNoteStatus: !state.newNoteStatus }))
 }))
+
+export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) => ({
+    tasksState: tasksArray,
+})) 

@@ -14,6 +14,7 @@ module.exports = {
       'purple': '#8833FF',
       'telegram': '#33BFFF',
       'green': 'green',
+      'background': '#F7F8FA',
       'whale': {
         fin: '#ADB8CC',
         minke: '#7D8FB3',

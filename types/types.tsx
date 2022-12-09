@@ -20,3 +20,20 @@ export interface IUser {
         userScore: number,
     }
 }
+
+export interface ITaskSpace {
+    name: string,
+    priority: boolean,
+    id: string,
+    tasks: Array<ITask>
+}
+export interface ITask {
+    name: string,
+    id: string,
+    assignee: string,
+    priority: boolean,
+    done: boolean
+}
+export interface IUseTasksStore {
+    tasksState: Array<ITaskSpace>
+}
