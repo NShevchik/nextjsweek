@@ -6,7 +6,6 @@ import { ProfileUserLevel } from './ProfileUserLevel';
 export const ProfileUser = () => {
     const usersState = useUsers((state) => state.usersState)
     const user = usersState ? usersState[0] : null;
-
     return (
         <div className='flex flex-col w-[100%] items-center justify-center pt-[10px]'>
             {user
@@ -41,7 +40,7 @@ export const ProfileUser = () => {
                     </div>
                 </div>
                 :
-                <div className='pt-[30px]'>
+                <div className='pt-[10px]'>
                     <ContentLoader
                         speed={2}
                         width={230}
