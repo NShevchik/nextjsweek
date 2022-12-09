@@ -1,6 +1,6 @@
+import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { IUser, UsersState } from '../types/types'
-import axios from 'axios'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: null,
@@ -23,8 +23,14 @@ export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
         axios.post(url, { name: folderName, notes: [] })
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     },
-    addNote: async (noteName: string, url: any) => {
+    addNote: async (noteName: string, url: string) => {
         axios.post(url, { name: noteName, data: '' })
+            .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
+    },
+    changeNoteDate: async (noteData: string, urlDel: string, urlPost: string) => {
+        await axios.delete(urlDel)
+        await axios.post(urlPost, noteData)
+            .then((response) => console.log(response))
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     }
 }))

@@ -1,11 +1,12 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ContentWrapper } from '../../../../../components/ContentWrapper/ContentWrapper'
 import { MainContainer } from '../../../../../components/MainContainer/MainContainer'
 import { NewNote } from '../../../../../components/Notes/NewNote'
+import { NoteEditor } from '../../../../../components/Notes/NoteEditor'
 import NotePreview from '../../../../../components/Notes/NotePreview'
 import { NotesNavigator } from '../../../../../components/Notes/NotesNavigator'
-import { useNewNote } from '../../../../../store/store'
+import { useNewNote, useNotes } from '../../../../../store/store'
 
 const noteOpen = ({ folder, notes, note }: { folder: any, notes: any, note: any }) => {
     const noteStatus = useNewNote((state) => state.newNoteStatus)
@@ -21,10 +22,7 @@ const noteOpen = ({ folder, notes, note }: { folder: any, notes: any, note: any 
                             })}
                             {noteStatus ? <NewNote folder={folder} /> : <></>}
                         </div>
-                        <div className='flex-50 flex items-center justify-center'>
-                            {note.data}
-                            {note.name}
-                        </div>
+                        <NoteEditor note={note} folder={folder} />
                     </div>
                 </div>
             </ContentWrapper>

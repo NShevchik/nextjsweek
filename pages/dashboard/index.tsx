@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
 import { MainContainer } from "../../components/MainContainer/MainContainer";
