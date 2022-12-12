@@ -7,7 +7,7 @@ const TasksSpace = ({ taskSpace }: { taskSpace: ITaskSpace }) => {
     return (
         <div className='bg-white shadow-soft mb-[20px] rounded-[3px]'>
             <TasksSpaceHeader name={taskSpace.name} length={taskSpace.tasks.length} />
-            <TasksList tasks={taskSpace.tasks} />
+            <TasksList tasks={taskSpace.tasks} taskSpace={taskSpace} />
         </div>
     )
 }

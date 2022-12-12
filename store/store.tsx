@@ -1,7 +1,7 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { tasksArray } from '../mocks/tasks/tasks'
-import { ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { ITask, ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: null,
@@ -44,4 +44,49 @@ export const useNewNote: UseBoundStore<StoreApi<any>> = create((set) => ({
 
 export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) => ({
     tasksState: tasksArray,
-})) 
+    setDoneTask: (taskSpaceId, taskId) => set((state: IUseTasksStore) => {
+        return {
+            tasksState: state.tasksState.map((space: ITaskSpace) => {
+                if (taskSpaceId === space.id) {
+                    return {
+                        ...space,
+                        tasks: space.tasks.map((task) => {
+                            if (task.id === taskId) {
+                                return { ...task, done: !task.done }
+                            }
+                            return task;
+                        })
+                    }
+                }
+                return space;
+            })
+        }
+    })
+}))
+
+    // setCompleteTask: (tId, ItemId, value) => {
+    //     set((state) => {
+    //         return {
+    //             todos: state.todos.map((_t) => {
+    //                 if (tId === _t.id) {
+    //                     return {
+    //                         ..._t,
+    //                         items: _t.items.map((_i) => {
+    //                             if (_i.id === ItemId) {
+    //                                 return { ..._i, completed: value };
+    //                             }
+    //                             return _i;
+    //                         }),
+    //                     };
+    //                 }
+    //                 return _t;
+    //             }),
+    //         };
+    //     });
+    // };
+
+// function handleClick(task: ITask) {
+//     tasksArray.map((taskSpace) =>
+//         taskSpace.tasks.map(taska => taska.id === task.id ? taska.done = !taska.done : '')
+//     )
+// }

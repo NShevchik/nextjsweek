@@ -35,5 +35,6 @@ export interface ITask {
     done: boolean
 }
 export interface IUseTasksStore {
-    tasksState: Array<ITaskSpace>
+    tasksState: Array<ITaskSpace>,
+    setDoneTask: (taskSpaceId: string, taskId: string) => void
 }

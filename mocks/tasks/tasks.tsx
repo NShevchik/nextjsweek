@@ -1,4 +1,5 @@
 import { ITaskSpace } from "../../types/types";
+import { nanoid as id } from 'nanoid'
 
 export const tasksArray: Array<ITaskSpace> = [
     {
@@ -8,14 +9,14 @@ export const tasksArray: Array<ITaskSpace> = [
         tasks: [
             {
                 name: 'Do Logo',
-                id: '1',
+                id: id(),
                 assignee: 'n.shevchik',
                 priority: false,
                 done: false
             },
             {
                 name: 'Do Do Do Do',
-                id: '2',
+                id: id(),
                 assignee: 'n.shevchik',
                 priority: true,
                 done: true
@@ -29,7 +30,7 @@ export const tasksArray: Array<ITaskSpace> = [
         tasks: [
             {
                 name: 'Do Coffee',
-                id: '3',
+                id: id(),
                 assignee: 'n.shevchik',
                 priority: false,
                 done: true
