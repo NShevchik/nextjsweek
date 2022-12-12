@@ -1,12 +1,24 @@
-import React from 'react'
-import { useTasks } from '../../store/store'
-import { ITask, ITaskSpace } from '../../types/types'
+import React, { useState } from 'react'
+import { MdClose, MdDone } from 'react-icons/md'
+import { useTasks, useUsers } from '../../store/store'
+import { ITask, ITaskSpace, IUser } from '../../types/types'
 import TaskListItem from './TaskListItem'
 import TasksListHeader from './TasksListHeader'
 
 const TasksList = ({ tasks, taskSpace }: { tasks: Array<ITask>, taskSpace: ITaskSpace }) => {
+    const usersState = useUsers((state) => state.usersState)
+    const user = usersState ? usersState[0] : null;
+    const [addTask, setAddTask] = useState(false)
+    const [taskText, setTaskText] = useState('')
     const setPriorityTask = useTasks((state) => state.setPriorityTask)
     const setDoneTask = useTasks((state) => state.setDoneTask)
+    const addNewTask = useTasks((state) => state.addNewTask)
+
+    function clickAddNewTask(taskSpace: any, taskText: string, user: IUser | null) {
+        addNewTask(taskSpace.id, taskText, user)
+        setTaskText('')
+        setAddTask(false)
+    }
 
     function setDone(taskSpace: any, task: ITask) {
         setDoneTask(taskSpace.id, task.id)
@@ -24,6 +36,22 @@ const TasksList = ({ tasks, taskSpace }: { tasks: Array<ITask>, taskSpace: ITask
                     })}
                 </div>
             </div>
+            {addTask ?
+                <div className='flex flex-row mt-[30px] items-center'>
+                    <input value={taskText} onChange={(event) => setTaskText(event?.target.value)} type="text" className=' outline-whale-bowhead text-whale-bowhead text-[14px] border-2 rounded-[30px] inline-block px-[25px] py-[10px] border-background shadow-soft' placeholder='Task text...' />
+                    <button className='ml-[10px] text-[30px] text-orange' onClick={() => clickAddNewTask(taskSpace, taskText, user)}>
+                        <MdDone />
+                    </button>
+                    <button className='ml-[10px] text-[24px]' onClick={() => setAddTask(!addTask)}>
+                        <MdClose />
+                    </button>
+                </div>
+                :
+                <button onClick={() => setAddTask(!addTask)} className='mt-[30px] text-whale-bowhead text-[14px] border-2 rounded-[30px] inline-block px-[25px] py-[10px] border-background shadow-soft'>
+                    Add Tasks
+                </button>
+            }
+
         </div>
     )
 }

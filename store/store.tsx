@@ -1,7 +1,8 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { tasksArray } from '../mocks/tasks/tasks'
-import { ITask, ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { nanoid as id } from 'nanoid'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: null,
@@ -31,7 +32,6 @@ export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
     changeNoteDate: async (noteData: string, urlDel: string, urlPost: string) => {
         await axios.delete(urlDel)
         await axios.post(urlPost, noteData)
-            .then((response) => console.log(response))
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     }
 }))
@@ -74,6 +74,25 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
                             }
                             return task;
                         })
+                    }
+                }
+                return space;
+            })
+        }
+    }),
+    addNewTask: (taskSpaceId, taskText, user) => set((state: any) => {
+        return {
+            tasksState: state.tasksState.map((space: ITaskSpace) => {
+                if (taskSpaceId === space.id) {
+                    return {
+                        ...space,
+                        tasks: [...space.tasks, {
+                            name: taskText,
+                            id: id(),
+                            assignee: user ? user.username : "",
+                            priority: false,
+                            done: false
+                        }]
                     }
                 }
                 return space;
