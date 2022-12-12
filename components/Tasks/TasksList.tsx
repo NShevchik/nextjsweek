@@ -14,7 +14,7 @@ const TasksList = ({ tasks, taskSpace }: { tasks: Array<ITask>, taskSpace: ITask
     const setDoneTask = useTasks((state) => state.setDoneTask)
     const addNewTask = useTasks((state) => state.addNewTask)
 
-    function clickAddNewTask(taskSpace: any, taskText: string, user: IUser | null) {
+    async function clickAddNewTask(taskSpace: any, taskText: string, user: IUser | null) {
         addNewTask(taskSpace.id, taskText, user)
         setTaskText('')
         setAddTask(false)

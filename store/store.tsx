@@ -44,6 +44,10 @@ export const useNewNote: UseBoundStore<StoreApi<any>> = create((set) => ({
 
 export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) => ({
     tasksState: tasksArray,
+    fetch: async (url: string) => {
+        const response = await fetch(url)
+        set({ tasksState: await response.json() })
+    },
     setDoneTask: (taskSpaceId, taskId) => set((state: IUseTasksStore) => {
         return {
             tasksState: state.tasksState.map((space: ITaskSpace) => {
@@ -80,7 +84,7 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
             })
         }
     }),
-    addNewTask: (taskSpaceId, taskText, user) => set((state: any) => {
+    addNewTask: async (taskSpaceId, taskText, user) => set((state: any) => {
         return {
             tasksState: state.tasksState.map((space: ITaskSpace) => {
                 if (taskSpaceId === space.id) {
@@ -98,8 +102,10 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
                 return space;
             })
         }
-    })
+    }),
+    // pushState: ({ state }) => axios.post('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks', state.tasksState),
 }))
+useTasks.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks')
 
     // setCompleteTask: (tId, ItemId, value) => {
     //     set((state) => {
