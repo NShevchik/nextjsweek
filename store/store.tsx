@@ -61,6 +61,24 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
                 return space;
             })
         }
+    }),
+    setPriorityTask: (taskSpaceId, taskId) => set((state: IUseTasksStore) => {
+        return {
+            tasksState: state.tasksState.map((space: ITaskSpace) => {
+                if (taskSpaceId === space.id) {
+                    return {
+                        ...space,
+                        tasks: space.tasks.map((task) => {
+                            if (task.id === taskId) {
+                                return { ...task, priority: !task.priority }
+                            }
+                            return task;
+                        })
+                    }
+                }
+                return space;
+            })
+        }
     })
 }))
 

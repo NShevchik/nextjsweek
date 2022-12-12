@@ -36,5 +36,6 @@ export interface ITask {
 }
 export interface IUseTasksStore {
     tasksState: Array<ITaskSpace>,
-    setDoneTask: (taskSpaceId: string, taskId: string) => void
+    setDoneTask: (taskSpaceId: string, taskId: string) => void,
+    setPriorityTask: (taskSpaceId: string, taskId: string) => void
 }
