@@ -84,7 +84,7 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
             })
         }
     }),
-    addNewTask: async (taskSpaceId, taskText, user) => set((state: any) => {
+    addNewTask: async (taskSpaceId, taskText, user) => set((state: IUseTasksStore) => {
         return {
             tasksState: state.tasksState.map((space: ITaskSpace) => {
                 if (taskSpaceId === space.id) {
@@ -103,7 +103,10 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
             })
         }
     }),
-    // pushState: ({ state }) => axios.post('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks', state.tasksState),
+    updateTasks: async (data, taskId) => {
+        await axios.delete(`https://638f1f119cbdb0dbe31da265.mockapi.io/tasks/${taskId}`)
+        await axios.post('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks', data)
+    }
 }))
 useTasks.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks')
 

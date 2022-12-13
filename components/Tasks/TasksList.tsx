@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { MdClose, MdDone } from 'react-icons/md'
 import { useTasks, useUsers } from '../../store/store'
@@ -13,19 +14,25 @@ const TasksList = ({ tasks, taskSpace }: { tasks: Array<ITask>, taskSpace: ITask
     const setPriorityTask = useTasks((state) => state.setPriorityTask)
     const setDoneTask = useTasks((state) => state.setDoneTask)
     const addNewTask = useTasks((state) => state.addNewTask)
+    const updateTasks = useTasks((state) => state.updateTasks)
+    const tasksState = useTasks((state) => state.tasksState)
 
     async function clickAddNewTask(taskSpace: any, taskText: string, user: IUser | null) {
-        addNewTask(taskSpace.id, taskText, user)
-        setTaskText('')
+        const addNew = async () => { addNewTask(taskSpace.id, taskText, user) }
+        addNew().then(() => setTaskText('')).then(() => updateTasks(useTasks.getState().tasksState.find((task) => task.id === taskSpace.id), taskSpace.id))
         setAddTask(false)
     }
-
-    function setDone(taskSpace: any, task: ITask) {
-        setDoneTask(taskSpace.id, task.id)
+    // .then(() => updateTasks(useTasks.getState().tasksState.find((task) => task.id === taskSpace.id), taskSpace.id))
+    async function setDone(taskSpace: any, task: ITask) {
+        const setDone = async () => { setDoneTask(taskSpace.id, task.id) }
+        setDone().then(() => updateTasks(useTasks.getState().tasksState.find((task) => task.id === taskSpace.id), taskSpace.id))
     }
     function changePriotiry(taskSpace: any, task: ITask) {
         setPriorityTask(taskSpace.id, task.id)
     }
+
+
+
     return (
         <div className='p-[30px]'>
             <div className='border-x-2 border-t-2 border-background rounded-[7px]'>
@@ -51,7 +58,6 @@ const TasksList = ({ tasks, taskSpace }: { tasks: Array<ITask>, taskSpace: ITask
                     Add Tasks
                 </button>
             }
-
         </div>
     )
 }

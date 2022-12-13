@@ -39,5 +39,7 @@ export interface IUseTasksStore {
     fetch: (url: string) => void,
     setDoneTask: (taskSpaceId: string, taskId: string) => void,
     setPriorityTask: (taskSpaceId: string, taskId: string) => void,
-    addNewTask: (taskSpaceId: string, taskText: string, user: IUser | null) => void
+    addNewTask: (taskSpaceId: string, taskText: string, user: IUser | null) => void,
+    pushState?: (state: IUseTasksStore) => void,
+    updateTasks: (data: any, taskId: string) => void
 }
