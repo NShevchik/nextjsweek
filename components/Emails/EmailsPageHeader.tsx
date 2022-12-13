@@ -7,7 +7,7 @@ import { EmailsPageHeaderItem } from './EmailsPageHeaderItem'
 
 export const EmailsPageHeader = () => {
     return (
-        <div className='flex flex-row justify-between'>
+        <div className='flex flex-row justify-between px-[20px]'>
             <EmailsPageHeaderItem text={'Select'} icon={<HiCheckCircle />} />
             <EmailsPageHeaderItem text={'Forward'} icon={<MdForward />} />
             <EmailsPageHeaderItem text={'Spam'} icon={<IoMdAlert />} />

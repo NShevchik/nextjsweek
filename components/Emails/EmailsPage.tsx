@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { IEmail } from '../../types/types'
+import { EmailPreview } from './EmailPreview'
 import { EmailsPageHeader } from './EmailsPageHeader'
 
 export const EmailsPage = ({ emails, element }: { emails: any, element: string }) => {
@@ -13,7 +14,7 @@ export const EmailsPage = ({ emails, element }: { emails: any, element: string }
                 <EmailsPageHeader />
                 <div>
                     {emails[element].map((email: IEmail) => {
-                        return <div>{email.sender}</div>
+                        return <EmailPreview email={email} />
                     })}
                 </div>
             </div>
