@@ -1,3 +1,5 @@
+import { Interface } from "readline"
+
 export interface MenuState {
     menu: string
     changeMenu: (menu: string) => void
@@ -42,4 +44,17 @@ export interface IUseTasksStore {
     addNewTask: (taskSpaceId: string, taskText: string, user: IUser | null) => void,
     pushState?: (state: IUseTasksStore) => void,
     updateTasks: (data: any, taskId: string) => void
+}
+
+export interface IEmail {
+    sender: string,
+    theme: string,
+    text: string,
+    email: string,
+    userPhoto: string,
+    sentDate: string,
+    unread: string,
+    favorite: string,
+    spam: string,
+    emailId: string
 }
