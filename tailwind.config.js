@@ -15,6 +15,7 @@ module.exports = {
       'telegram': '#33BFFF',
       'green': 'green',
       'background': '#F7F8FA',
+      'stone': '#FAFBFC',
       'whale': {
         fin: '#ADB8CC',
         minke: '#7D8FB3',
@@ -34,6 +35,7 @@ module.exports = {
       '20': '1 1 20%',
       '25': '1 1 25%',
       '26': '1 1 26%',
+      '74': '1 1 74%',
       '60': '1 1 60%',
       '50': '1 1 50%',
     },

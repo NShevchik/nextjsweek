@@ -1,0 +1,16 @@
+{
+    "inbox": [
+    {
+    "username": "n.shevchik",
+    "id": "1",
+    "userToken": "djkolpak009mp3",
+    "inbox": {
+        "firstName": "Nikita",
+        "lastName": "Shevchik",
+        "email": "n.shevchik@softteco.com",
+        "userPhoto": "https://i.guim.co.uk/img/media/8892e22ee2b011a74ab9f31c70f3b4a1f44f8f97/0_180_5400_3240/master/5400.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=760db27a86f1ce6a1b08f4dcd7e2b5c5",
+        "userLevel": "4",
+        "userScore": "33"
+        }
+    }]
+}
