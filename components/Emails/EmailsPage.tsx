@@ -14,7 +14,7 @@ export const EmailsPage = ({ emails, element }: { emails: any, element: string }
                 <EmailsPageHeader />
                 <div>
                     {emails[element].map((email: IEmail) => {
-                        return <EmailPreview email={email} />
+                        return <EmailPreview key={email.emailId} email={email} />
                     })}
                 </div>
             </div>

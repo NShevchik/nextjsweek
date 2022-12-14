@@ -6,7 +6,7 @@ import { MainContainer } from "../../components/MainContainer/MainContainer";
 export default function dashboard() {
   return (
     <MainContainer keywords="dashboard, main menu, profile">
-      <ContentWrapper style="white">
+      {/* <ContentWrapper style="white">
         <div className='px-[25px] py-[30px]'>
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
@@ -30,7 +30,7 @@ export default function dashboard() {
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
           DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD DASHBOARD
         </div>
-      </ContentWrapper>
+      </ContentWrapper> */}
     </MainContainer>
   )
 }

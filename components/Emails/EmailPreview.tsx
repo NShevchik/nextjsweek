@@ -5,6 +5,27 @@ import { IEmail } from '../../types/types'
 import { WhiteCircle_s } from '../WhiteCircle/WhiteCircle_s'
 
 export const EmailPreview = ({ email }: { email: IEmail }) => {
+
+    // console.log(email.sentDate.slice(11, 16))
+    // console.log(email.sentDate)
+
+    function setDateInEmail(time: string) {
+        const dateFromJSON: Date = new Date(time);
+        const today: Date = new Date()
+        const raznice = ((Number(dateFromJSON) - Number(today)) / 86000000) * 24
+        if (raznice < -24) {
+            console.log(dateFromJSON);
+            const norm = raznice * (-1) / 24;
+            if (norm > 20) {
+                return `${time.slice(8, 10)}.${time.slice(5, 7)}.${time.slice(0, 4)}`
+            } else {
+                return `${norm.toFixed()} day(s) ago`
+            }
+        } else {
+            return time.slice(11, 16)
+        }
+    }
+
     return (
         <div className=' bg-stone flex flex-row text-[14px] justify-between items-center py-[10px] px-[20px] rounded-[30px] my-[5px] cursor-pointer'>
             <div className='text-[24px] text-whale-killer flex flex-row items-center' >
@@ -13,11 +34,11 @@ export const EmailPreview = ({ email }: { email: IEmail }) => {
                     <img src={email.userPhoto} />
                 </div>
             </div>
-            <div className='flex flex-row items-center w-full px-[25px]'>
+            <div className='flex flex-row items-center w-[60%] px-[25px] flex-grow '>
                 <div className='text-whale-blue pr-[25px]'>
                     {email.sender}
                 </div>
-                <div className='text-whale-bowhead pr-[25px]'>
+                <div className='text-whale-bowhead pr-[25px] max-w-[150px]  text-ellipsis overflow-hidden whitespace-nowrap'>
                     {email.theme}
                 </div>
                 <div className='text-whale-killer w-[200px] overflow-hidden whitespace-nowrap text-ellipsis'>
@@ -25,9 +46,9 @@ export const EmailPreview = ({ email }: { email: IEmail }) => {
                 </div>
             </div>
             <div className='pr-[15px] text-whale-bowhead text-[12px]'>
-                {email.sentDate.slice(11, 16)}
+                {setDateInEmail(email.sentDate)}
             </div>
-            <div>
+            <div >
                 <WhiteCircle_s icon={<MdStar />} hoverBackground={true} />
             </div>
         </div>
