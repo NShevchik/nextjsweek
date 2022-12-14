@@ -1,20 +1,19 @@
 import React from 'react'
 import { HiCheckCircle } from 'react-icons/hi'
 import { MdStar } from 'react-icons/md'
+import { useEmails } from '../../store/store'
 import { IEmail } from '../../types/types'
 import { WhiteCircle_s } from '../WhiteCircle/WhiteCircle_s'
 
 export const EmailPreview = ({ email }: { email: IEmail }) => {
-
-    // console.log(email.sentDate.slice(11, 16))
-    // console.log(email.sentDate)
+    const setSelected = useEmails((state) => state.setSelected)
+    const setFavorite = useEmails((state) => state.setFavorite)
 
     function setDateInEmail(time: string) {
         const dateFromJSON: Date = new Date(time);
         const today: Date = new Date()
         const raznice = ((Number(dateFromJSON) - Number(today)) / 86000000) * 24
         if (raznice < -24) {
-            console.log(dateFromJSON);
             const norm = raznice * (-1) / 24;
             if (norm > 20) {
                 return `${time.slice(8, 10)}.${time.slice(5, 7)}.${time.slice(0, 4)}`
@@ -25,11 +24,16 @@ export const EmailPreview = ({ email }: { email: IEmail }) => {
             return time.slice(11, 16)
         }
     }
-
     return (
         <div className=' bg-stone flex flex-row text-[14px] justify-between items-center py-[10px] px-[20px] rounded-[30px] my-[5px] cursor-pointer'>
             <div className='text-[24px] text-whale-killer flex flex-row items-center' >
-                <HiCheckCircle className='hover:text-orange' />
+                {
+                    email.selected
+                        ?
+                        <HiCheckCircle className='text-orange' onClick={() => setSelected(email.emailId)} />
+                        :
+                        <HiCheckCircle className='hover:text-orange' onClick={() => setSelected(email.emailId)} />
+                }
                 <div className='w-[40px] h-[40px] overflow-hidden rounded-full  ml-[16px]'>
                     <img src={email.userPhoto} />
                 </div>
@@ -49,10 +53,14 @@ export const EmailPreview = ({ email }: { email: IEmail }) => {
                 {setDateInEmail(email.sentDate)}
             </div>
             <div >
-                <WhiteCircle_s icon={<MdStar />} hoverBackground={true} />
+                {
+                    email.favorite
+                        ?
+                        <div onClick={() => setFavorite(email.emailId)}><WhiteCircle_s icon={<MdStar />} hoverBackground={false} select={true} /></div>
+                        :
+                        <div onClick={() => setFavorite(email.emailId)}><WhiteCircle_s icon={<MdStar />} hoverBackground={true} /></div>
+                }
             </div>
         </div>
     )
 }
-
-//сделать красиво дату отправки имейла(если не сегодня + дата)

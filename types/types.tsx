@@ -53,8 +53,16 @@ export interface IEmail {
     email: string,
     userPhoto: string,
     sentDate: string,
-    unread: string,
-    favorite: string,
-    spam: string,
-    emailId: string
+    unread: boolean,
+    favorite: boolean,
+    spam: boolean,
+    emailId: string,
+    selected: boolean
+}
+export interface IUseEmailsStore {
+    emailsState: any,
+    emailsInbox: any,
+    fetch: () => void,
+    setSelected: (emailId: string) => void,
+    setFavorite: (emailId: string) => void
 }

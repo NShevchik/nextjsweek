@@ -4,18 +4,20 @@ import { ContentWrapper } from '../../../components/ContentWrapper/ContentWrappe
 import { EmailsMenu } from '../../../components/Emails/EmailsMenu'
 import { EmailsPage } from '../../../components/Emails/EmailsPage'
 import { MainContainer } from '../../../components/MainContainer/MainContainer'
+import { useEmails } from '../../../store/store'
+import { IEmail } from '../../../types/types'
 
-const EmailElement = ({ email }: { email: any }) => {
+const EmailElement = () => {
     const router = useRouter()
-    // let data = new Date()
-    // console.log(data.toJSON())
-    const openedElement = String(router.query.element);
+    const page = String(router.query.element);
+    const email = useEmails((state) => state.emailsState)
+
     return (
         <MainContainer keywords="EMAILS, main menu, profile">
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <EmailsMenu />
-                    <EmailsPage emails={email} element={openedElement} />
+                    {email ? <EmailsPage page={page} /> : <></>}
                 </div>
             </ContentWrapper>
         </MainContainer>
@@ -24,9 +26,11 @@ const EmailElement = ({ email }: { email: any }) => {
 
 export default EmailElement
 
-export async function getServerSideProps({ params }: { params: any }) {
-    const email = require('../../../mocks/emails/emailsData')
-    return {
-        props: { email },
-    }
-}
+// { email }: { email: any }
+
+// export async function getServerSideProps({ params }: { params: any }) {
+//     const email = require('../../../mocks/emails/emailsData')
+//     return {
+//         props: { email },
+//     }
+// }

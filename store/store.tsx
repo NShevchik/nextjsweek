@@ -1,11 +1,11 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { tasksArray } from '../mocks/tasks/tasks'
-import { ITaskSpace, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { IEmail, ITaskSpace, IUseEmailsStore, IUser, IUseTasksStore, UsersState } from '../types/types'
 import { nanoid as id } from 'nanoid'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
-    usersState: null,
+    usersState: [{ username: 'null', id: 'null', userToker: 'null', profile: { firstName: 'null', lastName: 'null', email: 'null', userPhoto: 'null', userLevel: 0, userScore: 0 } }],
     fetch: async (url: string) => {
         const response = await fetch(url)
         set({ usersState: await response.json() })
@@ -109,6 +109,68 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
     }
 }))
 useTasks.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks')
+
+
+
+export const useEmails: UseBoundStore<StoreApi<IUseEmailsStore>> = create((set) => ({
+    emailsState: null,
+    emailsInbox: null,
+    "Inbox": 'hello',
+    fetch: async () => {
+        const response = await require('../mocks/emails/emailsData.json')
+        set({ emailsState: response })
+        set({ emailsInbox: response['Inbox'] })
+    },
+    setSelected: (idEmail) => set((state: IUseEmailsStore) => {
+        return {
+            emailsInbox: state.emailsInbox.map((message: IEmail) => {
+                if (message.emailId === idEmail) {
+                    return { ...message, selected: !message.selected }
+                }
+                return message;
+            })
+        }
+    }),
+    setFavorite: (idEmail) => set((state: IUseEmailsStore) => {
+        return {
+            emailsInbox: state.emailsInbox.map((message: IEmail) => {
+                if (message.emailId === idEmail) {
+                    return { ...message, favorite: !message.favorite }
+                }
+                return message;
+            })
+        }
+    })
+}))
+useEmails.getState().fetch()
+// '../../../mocks/emails/emailsData'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // setCompleteTask: (tId, ItemId, value) => {
     //     set((state) => {

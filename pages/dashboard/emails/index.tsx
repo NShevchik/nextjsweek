@@ -9,7 +9,7 @@ function emails() {
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <EmailsMenu />
-                    {/* <EmailsPage /> */}
+                    <EmailsPage />
                 </div>
             </ContentWrapper>
         </MainContainer>

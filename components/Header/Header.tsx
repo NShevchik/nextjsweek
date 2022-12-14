@@ -20,7 +20,7 @@ export const Header = () => {
                 </div>
                 <Navbar />
                 <SearchBar />
-                <UserNavigator username={user ? user.username : null} />
+                {/* <UserNavigator username={user?.username} /> */}
             </div>
         </div>
     )

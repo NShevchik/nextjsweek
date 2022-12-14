@@ -7,10 +7,11 @@
             "email": "n.shevchik@softteco.com",
             "userPhoto": "https://thispersondoesnotexist.com/image",
             "sentDate": "2022-12-14T10:46:47.303",
-            "unread": "false",
-            "favorite": "false",
-            "spam": "false",
-            "emailId": "4245567"
+            "unread": false,
+            "favorite": false,
+            "spam": false,
+            "emailId": "4245567",
+            "selected": false
         },
         {
             "sender": "Aleg Alegov",
@@ -19,10 +20,11 @@
             "email": "n.olegk@softteco.com",
             "userPhoto": "https://i.guim.co.uk/img/media/8892e22ee2b011a74ab9f31c70f3b4a1f44f8f97/0_180_5400_3240/master/5400.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=760db27a86f1ce6a1b08f4dcd7e2b5c5",
             "sentDate": "2022-12-14T05:42:47.303",
-            "unread": "false",
-            "favorite": "false",
-            "spam": "false",
-            "emailId": "4245345"
+            "unread": false,
+            "favorite": false,
+            "spam": false,
+            "emailId": "4245345",
+            "selected": false
         },
         {
             "sender": "Porye Uralo",
@@ -31,10 +33,11 @@
             "email": "p.uralo@softteco.com",
             "userPhoto": "https://thiscatdoesnotexist.com/",
             "sentDate": "2022-12-10T10:01:47.303",
-            "unread": "false",
-            "favorite": "false",
-            "spam": "false",
-            "emailId": "4245895"
+            "unread": false,
+            "favorite": false,
+            "spam": false,
+            "emailId": "4245895",
+            "selected": false
         },
         {
             "sender": "Ye North Kan",
@@ -43,10 +46,24 @@
             "email": "ye@softteco.com",
             "userPhoto": "https://thispersondoesnotexist.com/image",
             "sentDate": "2022-03-10T12:12:22.303",
-            "unread": "false",
-            "favorite": "false",
-            "spam": "false",
-            "emailId": "4245320"
+            "unread": false,
+            "favorite": false,
+            "spam": false,
+            "emailId": "4245320",
+            "selected": false
+        },
+        {
+            "sender": "Horse Jack",
+            "theme": "Yes its me",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, provident eius, enim aliquid laborum laboriosam, quis neque iusto ratione maxime debitis rem repellendus repellat porro harum placeat reiciendis? Perspiciatis, repellat!",
+            "email": "kcaj@softteco.com",
+            "userPhoto": "https://thishorsedoesnotexist.com/",
+            "sentDate": "2012-12-14T05:42:47.303",
+            "unread": false,
+            "favorite": false,
+            "spam": false,
+            "emailId": "42453457",
+            "selected": false
         }
     ],
     "Pending Emails": [],

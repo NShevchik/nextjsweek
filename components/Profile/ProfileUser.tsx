@@ -1,5 +1,4 @@
 import React from 'react'
-import ContentLoader from 'react-content-loader';
 import { useUsers } from '../../store/store';
 import { ProfileUserLevel } from './ProfileUserLevel';
 
@@ -8,7 +7,7 @@ export const ProfileUser = () => {
     const user = usersState ? usersState[0] : null;
     return (
         <div className='flex flex-col w-[100%] items-center justify-center pt-[10px]'>
-            {/* {user
+            {user
                 ?
                 <div className='relative'>
                     <div className='w-[110px] h-[110px] rounded-full overflow-hidden'>
@@ -17,19 +16,7 @@ export const ProfileUser = () => {
                     <ProfileUserLevel user={user} />
                 </div>
                 :
-                <>
-                    <ContentLoader
-                        speed={2}
-                        width={130}
-                        height={130}
-                        viewBox="0 0 130 130"
-                        backgroundColor="#f3f3f3"
-                        foregroundColor="#ecebeb"
-                        uniqueKey="skeleton-image-circle"
-                    >
-                        <rect x="0" y="0" rx="100" ry="100" width="130" height="130" />
-                    </ContentLoader>
-                </>
+                <div className=' h-[130px] w-[130px] bg-whale-gray rounded-full animate-pulse' />
             }
             {user
                 ?
@@ -42,23 +29,11 @@ export const ProfileUser = () => {
                     </div>
                 </div>
                 :
-                <div className='pt-[10px]'>
-                    <ContentLoader
-                        speed={2}
-                        width={230}
-                        height={60}
-                        viewBox="0 0 230 60"
-                        backgroundColor="#f3f3f3"
-                        foregroundColor="#ecebeb"
-                        uniqueKey="skeleton-name-email"
-                    >
-                        <rect x="30" y="0" rx="5" ry="5" width="170" height="15" />
-                        <rect x="0" y="30" rx="5" ry="5" width="230" height="15" />
-                    </ContentLoader>
+                <div className='pt-[10px] w-[230px] h-[60px] flex flex-col items-center'>
+                    <div className=' h-[15px] w-[170px] bg-whale-gray rounded-md animate-pulse' />
+                    <div className=' h-[15px] w-[230px] bg-whale-gray rounded-md animate-pulse mt-[30px]' />
                 </div>
-            } */}
+            }
         </div>
     )
 }
-
-
