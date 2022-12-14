@@ -66,3 +66,16 @@ export interface IUseEmailsStore {
     setSelected: (emailId: string) => void,
     setFavorite: (emailId: string) => void
 }
+export interface IFolder {
+    name: string,
+    id: string,
+    files: Array<IFile>,
+}
+export interface IFile {
+    name: string,
+    id: string
+}
+export interface IUseFilesStore {
+    filesState: any,
+    fetch: () => void,
+}

@@ -1,8 +1,9 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { tasksArray } from '../mocks/tasks/tasks'
-import { IEmail, ITaskSpace, IUseEmailsStore, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { IEmail, ITaskSpace, IUseEmailsStore, IUseFilesStore, IUser, IUseTasksStore, UsersState } from '../types/types'
 import { nanoid as id } from 'nanoid'
+import { filesData } from '../mocks/files/filesData'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
     usersState: [{ username: 'null', id: 'null', userToker: 'null', profile: { firstName: 'null', lastName: 'null', email: 'null', userPhoto: 'null', userLevel: 0, userScore: 0 } }],
@@ -146,17 +147,13 @@ useEmails.getState().fetch()
 // '../../../mocks/emails/emailsData'
 
 
-
-
-
-
-
-
-
-
-
-
-
+export const useFiles: UseBoundStore<StoreApi<IUseFilesStore>> = create((set) => ({
+    filesState: null,
+    fetch: async () => {
+        set({ filesState: filesData })
+    },
+}))
+useFiles.getState().fetch()
 
 
 
