@@ -10,7 +10,7 @@ export const FilesMenuNavFolders = () => {
             {filesData.map((folder: IFolder) => {
                 return <FolderItem key={folder.id} folderName={folder.name} id={folder.id} />
             })}
-            <FolderItem key={'favorite'} folderName={'Favorite Files'} icon={<AiFillStar />} id={'favorite'} />
+            <FolderItem key={'favorites'} folderName={'Favorite Files'} icon={<AiFillStar />} id={'favorites'} />
         </div>
     )
 }

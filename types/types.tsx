@@ -1,5 +1,3 @@
-import { Interface } from "readline"
-
 export interface MenuState {
     menu: string
     changeMenu: (menu: string) => void
@@ -45,7 +43,6 @@ export interface IUseTasksStore {
     pushState?: (state: IUseTasksStore) => void,
     updateTasks: (data: any, taskId: string) => void
 }
-
 export interface IEmail {
     sender: string,
     theme: string,
@@ -73,7 +70,12 @@ export interface IFolder {
 }
 export interface IFile {
     name: string,
-    id: string
+    id: string,
+    type: string,
+    owner: string, 
+    ownerUsername: string,
+    modified: string,
+    lastOpened: string
 }
 export interface IUseFilesStore {
     filesState: any,

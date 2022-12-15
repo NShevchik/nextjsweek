@@ -13,6 +13,7 @@ module.exports = {
       'green': '#29CC39',
       'purple': '#8833FF',
       'telegram': '#33BFFF',
+      "purple": "#8833FF",
       'green': 'green',
       'background': '#F7F8FA',
       'stone': '#FAFBFC',
@@ -30,6 +31,8 @@ module.exports = {
       'soft': '0px 2px 5px rgba(0, 0, 0, 0.03)',
       'extrasoft': '0px 10px 30px rgba(0, 0, 0, 0.03)',
       'soft-orange': '0px 5px 30px rgba(255, 102, 51, 0.3)',
+      'soft-purple': '0px 5px 30px rgba(136, 51, 255, 0.3)',
+      'soft-telegram': '0px 5px 30px rgba(51, 191, 255, 0.3)',
     },
     flex: {
       '20': '1 1 20%',
