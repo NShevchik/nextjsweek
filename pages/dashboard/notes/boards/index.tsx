@@ -4,7 +4,7 @@ import { MainContainer } from '../../../../components/MainContainer/MainContaine
 
 export default function boards() {
     return (
-        <MainContainer keywords="boards, notes board, board">
+        <MainContainer keywords="boards, notes board, board" title={'Boards'}>
             <ContentWrapper style="white">
                 <div className='px-[25px] py-[30px]'>
                     BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS BOARDS

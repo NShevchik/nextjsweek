@@ -11,7 +11,7 @@ import { useNewNote, useNotes } from '../../../../../store/store'
 const noteOpen = ({ folder, notes, note }: { folder: any, notes: any, note: any }) => {
     const noteStatus = useNewNote((state) => state.newNoteStatus)
     return (
-        <MainContainer keywords='notes, note'>
+        <MainContainer keywords='notes, note' title={note.name}>
             <ContentWrapper style="white">
                 <div className='py-[30px] min-h-[200px]'>
                     <div className='flex flex-row'>

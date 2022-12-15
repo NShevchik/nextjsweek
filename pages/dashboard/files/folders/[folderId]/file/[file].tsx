@@ -15,7 +15,7 @@ const index = ({ params }: { params: { folderId: string, file: string } }) => {
     const currentFile: IFile = files && files.find((file: IFile) => file.id === params.file)
     console.log(currentFile)
     return (
-        <MainContainer keywords="FILES, main menu, profile">
+        <MainContainer keywords="FILES, main menu, profile" title={currentFile.name}>
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <FilesMenu />

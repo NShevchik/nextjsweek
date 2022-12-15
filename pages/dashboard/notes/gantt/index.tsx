@@ -4,7 +4,7 @@ import { MainContainer } from '../../../../components/MainContainer/MainContaine
 
 export default function gantt() {
     return (
-        <MainContainer keywords="gantt">
+        <MainContainer keywords="gantt" title={'Gantt'}>
             <ContentWrapper style="white">
                 <div className='px-[25px] py-[30px]'>
                     GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT GANTT

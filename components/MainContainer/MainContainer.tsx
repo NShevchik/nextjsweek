@@ -4,11 +4,11 @@ import { Header } from '../Header/Header'
 import { Profile } from '../Profile/Profile'
 import { Sidabar } from '../Sidabar/Sidabar'
 
-export const MainContainer = ({ children, keywords }: { children: any, keywords: string }) => {
+export const MainContainer = ({ children, keywords, title }: { children: any, keywords: string, title: string }) => {
     return (
         <>
             <Head>
-                <title>Main Page</title>
+                <title>{title}</title>
                 <meta name="keywords" content={"nikita, " + keywords} />
             </Head>
             <Header />

@@ -5,7 +5,7 @@ import { MainContainer } from "../../../components/MainContainer/MainContainer";
 
 function emails() {
     return (
-        <MainContainer keywords="EMAILS, main menu, profile">
+        <MainContainer keywords="EMAILS, main menu, profile" title={'Emails'}>
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <EmailsMenu />

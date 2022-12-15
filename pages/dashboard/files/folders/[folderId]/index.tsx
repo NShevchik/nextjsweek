@@ -5,7 +5,7 @@ import { MainContainer } from "../../../../../components/MainContainer/MainConta
 
 const foldersPage = ({ params }: { params: { folderId: string } }) => {
     return (
-        <MainContainer keywords="FILES, main menu, profile">
+        <MainContainer keywords="files, main menu, profile, files folder, folder" title={'Files Folders'}>
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <FilesMenu />

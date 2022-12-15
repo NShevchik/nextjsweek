@@ -6,7 +6,7 @@ import TasksHeader from '../../../components/Tasks/TasksHeader'
 
 const index = () => {
     return (
-        <MainContainer keywords="FILES, main menu, profile">
+        <MainContainer keywords="FILES, main menu, profile" title={'Tasks'}>
             <ContentWrapper>
                 <TasksHeader />
                 <TasksContent />

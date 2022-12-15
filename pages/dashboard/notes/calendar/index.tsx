@@ -4,7 +4,7 @@ import { MainContainer } from '../../../../components/MainContainer/MainContaine
 
 export default function calendar() {
     return (
-        <MainContainer keywords="calendar, dates, data">
+        <MainContainer keywords="calendar, dates, data" title={'Calendar'}>
             <ContentWrapper style="white">
                 <div className='px-[25px] py-[30px]'>
                     CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR CALENDAR

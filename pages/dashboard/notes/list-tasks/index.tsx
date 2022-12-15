@@ -4,7 +4,7 @@ import { MainContainer } from '../../../../components/MainContainer/MainContaine
 
 export default function listTasks() {
     return (
-        <MainContainer keywords="tasks, list task, list, list tasks">
+        <MainContainer keywords="tasks, list task, list, list tasks" title={'List Tasks'}>
             <ContentWrapper style="white">
                 <div className='px-[25px] py-[30px]'>
                     LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS LIST-TASKS

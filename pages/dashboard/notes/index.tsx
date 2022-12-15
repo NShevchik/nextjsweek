@@ -7,7 +7,7 @@ import { NotesPreview } from '../../../components/Notes/NotesPreview'
 
 export default function notes() {
     return (
-        <MainContainer keywords='notes, note'>
+        <MainContainer keywords='notes, note' title={'Notes'}>
             <ContentWrapper style="white">
                 <div className='py-[30px] min-h-[200px]'>
                     <div className='flex flex-row'>

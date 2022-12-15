@@ -13,7 +13,7 @@ const EmailElement = () => {
     const email = useEmails((state) => state.emailsState)
 
     return (
-        <MainContainer keywords="EMAILS, main menu, profile">
+        <MainContainer keywords="EMAILS, main menu, profile" title={page}>
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <EmailsMenu />

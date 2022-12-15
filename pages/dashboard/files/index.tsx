@@ -5,7 +5,7 @@ import { MainContainer } from "../../../components/MainContainer/MainContainer";
 
 function files() {
     return (
-        <MainContainer keywords="FILES, main menu, profile">
+        <MainContainer keywords="files, main menu, profile, files" title={'Files'}>
             <ContentWrapper style="white">
                 <div className="flex flex-row">
                     <FilesMenu />
