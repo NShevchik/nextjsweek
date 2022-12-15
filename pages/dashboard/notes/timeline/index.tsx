@@ -4,7 +4,7 @@ import { MainContainer } from '../../../../components/MainContainer/MainContaine
 
 export default function timeline() {
     return (
-        <MainContainer keywords="note time, notes time, notes timeline, notes time line, time line">
+        <MainContainer keywords="note time, notes time, notes timeline, notes time line, time line" title={'Timeline'}>
             <ContentWrapper style="white">
                 <div className='px-[25px] py-[30px]'>
                     TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE TIMELINE
