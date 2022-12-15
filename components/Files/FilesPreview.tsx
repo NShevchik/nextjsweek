@@ -5,7 +5,7 @@ import { FilesPreviewShowcase } from './FilesPreviewShowcase'
 
 export const FilesPreview = ({ folderId }: { folderId?: string }) => {
     return (
-        <div className='px-[25px] py-[30px] w-[74%]'>
+        <div className='py-[30px] w-[74%]'>
             <FilesPreviewHeader />
             <FilesPreviewShowcase />
             <FilesFromFolderPreview id={folderId} />

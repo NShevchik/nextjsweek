@@ -4,7 +4,7 @@ import { MdSearch } from 'react-icons/md'
 
 export const FilesPreviewHeader = () => {
     return (
-        <div className='border-b-2 border-b-background pb-[30px]'>
+        <div className='border-b-2 border-b-background pb-[30px] px-[25px]'>
             <div className='flex flex-row justify-between items-center'>
                 <div className=" text-whale-fin text-[14px]">
                     <div className="flex flex-row items-center h-full">

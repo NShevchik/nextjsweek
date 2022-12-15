@@ -1,12 +1,12 @@
 import axios from 'axios'
 import create, { StoreApi, UseBoundStore } from 'zustand'
 import { tasksArray } from '../mocks/tasks/tasks'
-import { IEmail, ITaskSpace, IUseEmailsStore, IUseFilesStore, IUser, IUseTasksStore, UsersState } from '../types/types'
+import { IEmail, INotes, ITaskSpace, IUseEmailsStore, IUseFilesStore, IUseNewNote, IUseNotesStore, IUser, IUseTasksStore, UsersState } from '../types/types'
 import { nanoid as id } from 'nanoid'
 import { filesData } from '../mocks/files/filesData'
 
 export const useUsers = create<UsersState<IUser>>((set) => ({
-    usersState: [{ username: 'null', id: 'null', userToker: 'null', profile: { firstName: 'null', lastName: 'null', email: 'null', userPhoto: 'null', userLevel: 0, userScore: 0 } }],
+    usersState: [{ username: 'user', id: 'userid', userToker: 'null', profile: { firstName: 'null', lastName: 'null', email: 'null', userPhoto: 'null', userLevel: 0, userScore: 0 } }],
     fetch: async (url: string) => {
         const response = await fetch(url)
         set({ usersState: await response.json() })
@@ -15,22 +15,22 @@ export const useUsers = create<UsersState<IUser>>((set) => ({
 }))
 useUsers.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/users')
 
-export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
-    notesState: [{ name: 'avi' }],
-    fetch: async (url: string) => {
+export const useNotes = create<IUseNotesStore<INotes>>((set) => ({
+    notesState: [{ name: 'avi', id: '1', notes: [] }],
+    fetch: async (url) => {
         const response = await fetch(url)
         set({ notesState: await response.json() })
     },
-    setNotes: (data: any) => set(() => ({ notesState: data })),
-    addFolder: async (folderName: string, url: any) => {
+    setNotes: (data) => set(() => ({ notesState: data })),
+    addFolder: async (folderName, url) => {
         axios.post(url, { name: folderName, notes: [] })
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     },
-    addNote: async (noteName: string, url: string) => {
+    addNote: async (noteName, url) => {
         axios.post(url, { name: noteName, data: '' })
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
     },
-    changeNoteDate: async (noteData: string, urlDel: string, urlPost: string) => {
+    changeNoteDate: async (noteData, urlDel, urlPost) => {
         await axios.delete(urlDel)
         await axios.post(urlPost, noteData)
             .then(() => useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders'))
@@ -38,7 +38,7 @@ export const useNotes: UseBoundStore<StoreApi<any>> = create((set) => ({
 }))
 useNotes.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/folders')
 
-export const useNewNote: UseBoundStore<StoreApi<any>> = create((set) => ({
+export const useNewNote = create<IUseNewNote<boolean>>((set) => ({
     newNoteStatus: false,
     newNoteEdit: () => set((state: any) => ({ newNoteStatus: !state.newNoteStatus }))
 }))

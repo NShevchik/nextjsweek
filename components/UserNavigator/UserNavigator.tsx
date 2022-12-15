@@ -8,7 +8,7 @@ export const UserNavigator = ({ username }: { username?: string | null }) => {
             <FaUserCircle className='text-whale-killer text-2xl' />
             <div className='text-whale-bowhead text-[13px] mx-[20px]'>
                 {username ?
-                    username
+                    <div>{username}</div>
                     :
                     <div className=' h-[10px] w-[70px] bg-whale-gray rounded-sm animate-pulse' >
                     </div>

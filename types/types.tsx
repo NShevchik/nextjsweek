@@ -7,6 +7,26 @@ export interface UsersState<T> {
     fetch: (url: string) => void
     setUsers: (data: Array<T>) => void
 }
+export interface IUseNotesStore<T> {
+    notesState: Array<T>,
+    fetch: (url: string) => void,
+    setNotes: (data: any) => void,
+    addFolder: (folderName: string, url: string) => void,
+    addNote: (noteName: string, url: string) => void,
+    changeNoteDate: (noteData: string, urlDel: string, urlPost: string) => void
+}
+export interface INote {
+    date: string,
+    id: string,
+    folderId: string,
+    name: string,
+    data: string
+}
+export interface INotes {
+    name: string,
+    id: string,
+    notes: Array<INote>
+}
 export interface IUser {
     username: string,
     id: string,
@@ -20,7 +40,10 @@ export interface IUser {
         userScore: number,
     }
 }
-
+export interface IUseNewNote<T> {
+    newNoteStatus: T,
+    newNoteEdit: () => void
+}
 export interface ITaskSpace {
     name: string,
     priority: boolean,
@@ -72,7 +95,7 @@ export interface IFile {
     name: string,
     id: string,
     type: string,
-    owner: string, 
+    owner: string,
     ownerUsername: string,
     modified: string,
     lastOpened: string

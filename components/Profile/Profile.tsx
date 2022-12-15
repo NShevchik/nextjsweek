@@ -8,7 +8,7 @@ export const Profile = () => {
     return (
         <div className=' w-[70%] my-0 mx-[auto] pt-[25px] '>
             <ProfileHeader />
-            {/* <ProfileUser /> */}
+            <ProfileUser />
             <ProfileMenu />
             <ProfileLinks />
         </div>

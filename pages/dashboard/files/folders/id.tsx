@@ -16,7 +16,7 @@ const foldersPage = ({ params }: { params: { id: string } }) => {
         </MainContainer>
     )
 }
-export default foldersPage
+// export default foldersPage
 export async function getServerSideProps({ params }: { params: { id: string } }) {
     return {
         props: { params }

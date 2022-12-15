@@ -9,7 +9,7 @@ export const FilesPreviewShowcase = () => {
     let count = -1;
     let colors = ['orange', 'purple', 'telegram'];
     return (
-        <div className='flex flex-row pt-[30px] gap-[10px]'>
+        <div className='flex flex-row pt-[30px] gap-[10px] px-[25px]'>
             <div className='flex flex-col w-[33%] gap-[10px]'>
                 {filesState.map((folder: IFolder) => {
                     count++;

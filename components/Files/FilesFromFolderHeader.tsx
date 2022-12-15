@@ -4,7 +4,7 @@ import { FilesFromFolderHeaderItem } from './FilesFromFolderHeaderItem'
 
 export const FilesFromFolderHeader = () => {
     return (
-        <div className='py-[25px] border-b-2 border-background'>
+        <div className='py-[25px] border-b-2 border-background px-[25px]'>
             <div className='flex flex-row justify-between px-[15px]'>
                 <FilesFromFolderHeaderItem text={'Name'} width={200} />
                 <FilesFromFolderHeaderItem text={'Location'} width={140} />
