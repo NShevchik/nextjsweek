@@ -111,8 +111,6 @@ export const useTasks: UseBoundStore<StoreApi<IUseTasksStore>> = create((set) =>
 }))
 useTasks.getState().fetch('https://638f1f119cbdb0dbe31da265.mockapi.io/tasks')
 
-
-
 export const useEmails: UseBoundStore<StoreApi<IUseEmailsStore>> = create((set) => ({
     emailsState: null,
     emailsInbox: null,
@@ -144,8 +142,6 @@ export const useEmails: UseBoundStore<StoreApi<IUseEmailsStore>> = create((set) 
     })
 }))
 useEmails.getState().fetch()
-// '../../../mocks/emails/emailsData'
-
 
 export const useFiles: UseBoundStore<StoreApi<IUseFilesStore>> = create((set) => ({
     filesState: null,
@@ -154,44 +150,3 @@ export const useFiles: UseBoundStore<StoreApi<IUseFilesStore>> = create((set) =>
     },
 }))
 useFiles.getState().fetch()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // setCompleteTask: (tId, ItemId, value) => {
-    //     set((state) => {
-    //         return {
-    //             todos: state.todos.map((_t) => {
-    //                 if (tId === _t.id) {
-    //                     return {
-    //                         ..._t,
-    //                         items: _t.items.map((_i) => {
-    //                             if (_i.id === ItemId) {
-    //                                 return { ..._i, completed: value };
-    //                             }
-    //                             return _i;
-    //                         }),
-    //                     };
-    //                 }
-    //                 return _t;
-    //             }),
-    //         };
-    //     });
-    // };
-
-// function handleClick(task: ITask) {
-//     tasksArray.map((taskSpace) =>
-//         taskSpace.tasks.map(taska => taska.id === task.id ? taska.done = !taska.done : '')
-//     )
-// }

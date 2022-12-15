@@ -21,7 +21,7 @@ export const FillePreviewItem = ({ file, parent }: { file: IFile, parent: IFolde
         }
     }
     return (
-        <Link href={`/dashboard/files/folders/${parent.id}/file/${file.id}`} className='text-[13px] block text-whale-bowhead cursor-pointer hover:bg-purple hover:text-white mx-[25px] hover:mx-0 hover:px-[25px] hover:border-b-transparent border-b-2 border-background'>
+        <Link href={`/dashboard/files/folders/${parent.id}/file/${file.id}`} className='text-[13px] block text-whale-bowhead cursor-pointer hover:bg-orange hover:text-white mx-[25px] hover:mx-0 hover:px-[25px] hover:border-b-transparent border-b-2 border-background'>
             <div className='flex flex-row items-center py-[20px]'>
                 <div className='flex flex-row items-center w-[200px]'>
                     <BsFileEarmarkFill className='text-[20px] text-whale-killer' />
